@@ -18,25 +18,22 @@ public class e26 {
         count = 0;
       }
     }
-    int theBigestOne = 0;
+    int buffer = 0;
     for (int i = 0; i < listOfSequences.length; i++) {
-        if (listOfSequences[i] < theBigestOne) {
-            theBigestOne = listOfSequences[i];
+        if (listOfSequences[i] < buffer) {
+            buffer = listOfSequences[i];
         }
     }
-    for (int i = 0; i < sequence.length; i++) {
-            if (sequence[i] != 0 && sequence[i + theBigestOne] != 0) {
-                System.out.println("Posicion donde comienza la secuencia mas larga: " + sequence[i]);    
-                System.out.println("Posicion donde termina la secuencia mas larga: " + sequence[i + theBigestOne]);
-            }
+    for (int i = 0; i < sequence.length - buffer; i++) {
+        if (sequence[i] != 0 && sequence[i + buffer] != 0) {
+            
+        }
     }
     // pene 🗿
     //puto 🏳‍🌈 (°v°)
     //0 | 0 | 3 | 0 | 4 | 1 | 0 | 0 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 
+    //0 | 0 | 3 | 0 | 4 | 1 | 0 | 0 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 |
     //significa que estás intentando acceder a un arreglo que tiene longitud 0 (está vacío) en la posición 0.
-    for (int i = 0; i < listOfSequences.length; i++) {
-      System.out.print(listOfSequences[i] + " | ");
-    }
   }
 }
 /* 📝 Hacer un programa que devuelva la posición de inicio y de fin
