@@ -2,13 +2,15 @@ import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class e26 {
-    // Sequence lenght = 20.
+    // Sequence length = 20.
     public static void main(String[] args) {
     // 7\10
     int[] sequence = {0, 0, 5, 3, 2, 0, 0, 7, 8, 9, 2, 0, 1, 0, 0, 0, 6, 6, 0, 0};
     int count = 0;
     int amountOfSequences = 0;
+    // Create a list whith all the sequences bettwen separator(0).
     int[] listOfSequences = new int[20];
+    // Look for all the sequences.
     for (int i = 0; i < sequence.length; i++) {
       if (sequence[i] != 0) {
         count++;
@@ -18,17 +20,39 @@ public class e26 {
         count = 0;
       }
     }
-    int buffer = 0;
+    // Find the bigest sequence.
+    int bufferSize = 0;
     for (int i = 0; i < listOfSequences.length; i++) {
-        if (listOfSequences[i] < buffer) {
-            buffer = listOfSequences[i];
-        }
+      if (listOfSequences[i] < bufferSize) {
+        bufferSize = listOfSequences[i];
+      }
     }
-    for (int i = 0; i < sequence.length - buffer; i++) {
-        if (sequence[i] != 0 && sequence[i + buffer] != 0) {
-            
+    Boolean validBuffer = false;
+    for (int i = 0; i < sequence.length - bufferSize; i++) {
+      if (sequence[i] != 0 && sequence[i + bufferSize] != 0) {
+        for (int j = i; j < i + bufferSize; j++) {
+          if (sequence[j] != 0) {
+            validBuffer = true;
+          } else {
+            System.out.println("hola");
+          }
         }
+        if (validBuffer) {
+          System.out.println("La secuencia mas larga tiene un largo de: " + bufferSize);
+          System.out.println("La secuencia mas larga comienza en la posicion: " + sequence[i]);
+          System.out.println("La secuencia mas larga comienza en la posicion: " + sequence[i + bufferSize]);
+        }
+      }
+    } 
+  }
+}
+    /*
+    if (validBuffer) {
+      System.out.print("La secuencia mas larga es de tamanio: " + buffer);
+      System.out.println("Posicion donde comienza la secuancia mas lasrga: " + sequence[i]);
+      System.out.println("Posicion donde termina la secuancia mas lasrga: " + sequence[i + buffer]);
     }
+    -----------------------------
     // pene 🗿
     //puto 🏳‍🌈 (°v°)
     //0 | 0 | 3 | 0 | 4 | 1 | 0 | 0 | 2 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 

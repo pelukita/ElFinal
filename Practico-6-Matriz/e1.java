@@ -9,6 +9,31 @@ public class e1{
                         {31, 32, 33, 34, 35, 36, 37, 38, 39, 40},
                         {41, 42, 43, 44, 45, 46, 47, 48, 49, 50}
                         };
+        mostrar(mat);
+        invertirmatriz(mat);
+        mostrar(mat);
+    }
+    public static void invertirmatriz(int[][]matriz){
+        for(int i=0;i<MAXC;i++){
+            invertirArreglo(matriz[i]);
+        }
+    }
+    public static void invertirArreglo(int[] arr){
+        int ini=0,fin=(MAXF-1)/2;
+        while (ini<fin) {
+            int temp=arr[ini];
+            arr[ini]=arr[fin];
+            arr[fin]=temp;
+            ini++;
+        }
+    }
+    public static void mostrar(int[][] mat){
+        for(int i=0;i<MAXF;i++){
+            for(int j=0;j<MAXC;j++){
+                System.out.print("["+mat[i][j] +"]");
+            }
+            System.out.println();
+        }
     }
 }
 /*Hacer un programa que dada una matriz de enteros de tamaño
