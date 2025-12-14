@@ -10,20 +10,24 @@ public class ejer19Elias {
     System.out.println("El numero es: " +numero+ "asi queda el arreglo despues de eliminarlo: ");
     mostrar_arr(arr);
   }
-
+    
   public static void buscar_numero(int[] arr, int numero) {
     int pos = 0;
     while (pos < MAX) {
       if (arr[pos] == numero) {
         corrimiento_izquierda(arr, pos);
+      } else {
+        pos++;
       }
-      pos++;
     }
   }
 
   public static void corrimiento_izquierda(int[] arr, int pos) {
-    int posición = MAX - 1;
-
+    int posicion = pos;
+    while (posicion < MAX-1) {
+      arr[posicion] = arr[posicion + 1];
+      posicion++;
+    }
   }
 
   public static void mostrar_arr(int[] arr) {
