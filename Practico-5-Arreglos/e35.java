@@ -5,8 +5,21 @@ public class e35{
         int n=0;
         n=pedirN(n);
         mostrar(arr);
-        insertar
+        insertarOrdenado(arr,n);
     }
+    public static void insertarOrdenado(int[] arr, int n) {
+    int pos = 0;
+
+    while (pos < MAX && arr[pos] < n) {
+        pos++;
+    }
+
+    for (int i = MAX - 1; i > pos; i--) {
+        arr[i] = arr[i - 1];
+    }
+
+    arr[pos] = n;
+}
     public static void mostrar(int[] arr){
         for(int i=0;i<MAX;i++){
             System.out.println(" |"+arr[i] +"| ");
