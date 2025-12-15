@@ -11,20 +11,22 @@ public class e1{
                         };
         mostrar(mat);
         invertirmatriz(mat);
+        System.out.println();
         mostrar(mat);
     }
     public static void invertirmatriz(int[][]matriz){
-        for(int i=0;i<MAXC;i++){
+        for(int i=0;i<MAXF;i++){
             invertirArreglo(matriz[i]);
         }
     }
     public static void invertirArreglo(int[] arr){
-        int ini=0,fin=(MAXF-1)/2;
+        int ini=0,fin=MAXC-1;
         while (ini<fin) {
             int temp=arr[ini];
             arr[ini]=arr[fin];
             arr[fin]=temp;
             ini++;
+            fin--;
         }
     }
     public static void mostrar(int[][] mat){
